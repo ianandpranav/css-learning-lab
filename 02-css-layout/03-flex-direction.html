@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Direction</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flex Direction</h1>
+
+    <h2>Row</h2>
+
+    <div class="container">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+    </div>
+
+    <h2>Column</h2>
+
+    <div class="container" style="flex-direction: column;">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+    </div>
+
+</body>
+</html>
