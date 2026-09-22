@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Item Placement</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 15px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+
+        .box-one {
+            grid-column: 1 / 3;
+        }
+
+        .box-two {
+            grid-row: 2 / 4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grid Item Placement</h1>
+
+    <div class="grid-container">
+        <div class="box box-one">One</div>
+        <div class="box box-two">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+        <div class="box">Six</div>
+    </div>
+
+</body>
+</html>
