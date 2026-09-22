@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Sizing</title>
+
+    <style>
+        .container {
+            display: flex;
+            gap: 15px;
+            width: 700px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .box {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            background-color: lightblue;
+        }
+
+        .grow {
+            flex-grow: 1;
+        }
+
+        .fixed {
+            width: 150px;
+        }
+
+        .basis {
+            flex-basis: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox Sizing</h1>
+
+    <div class="container">
+        <div class="box grow">Flex Grow</div>
+        <div class="box fixed">Fixed Width</div>
+        <div class="box basis">Flex Basis</div>
+    </div>
+
+</body>
+</html>
