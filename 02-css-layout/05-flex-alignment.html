@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Alignment</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox Alignment</h1>
+
+    <div class="container">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+    </div>
+
+</body>
+</html>
