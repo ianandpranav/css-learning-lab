@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Card Layout</title>
+
+    <style>
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Grid Card Layout</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h2>Java</h2>
+            <p>Learn programming fundamentals and OOP concepts.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>Practice JavaScript and modern web development.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <h2>HTML</h2>
+            <p>Build the structure of modern web pages.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <h2>CSS</h2>
+            <p>Design layouts and responsive interfaces.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <h2>Git</h2>
+            <p>Learn version control and development workflows.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <h2>GitHub</h2>
+            <p>Practice repositories, branches and collaboration.</p>
+            <button>Explore</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
