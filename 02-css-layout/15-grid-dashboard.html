@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Dashboard</title>
+
+    <style>
+        .dashboard {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 70px 1fr;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar content";
+
+            min-height: 600px;
+            gap: 10px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .header {
+            grid-area: header;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Grid Dashboard</h1>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <p>Home</p>
+            <p>Projects</p>
+            <p>Tasks</p>
+            <p>Settings</p>
+        </aside>
+
+        <header class="header">
+            <h2>Welcome Back</h2>
+        </header>
+
+        <main class="content">
+
+            <div class="card">
+                <h3>Projects</h3>
+                <p>12 Active Projects</p>
+            </div>
+
+            <div class="card">
+                <h3>Tasks</h3>
+                <p>24 Pending Tasks</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed</h3>
+                <p>48 Completed Tasks</p>
+            </div>
+
+            <div class="card">
+                <h3>Progress</h3>
+                <p>75% Overall Progress</p>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
