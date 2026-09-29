@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h2>HTML</h2>
+            <p>Structure of web pages.</p>
+        </div>
+
+        <div class="card">
+            <h2>CSS</h2>
+            <p>Styling and layout of web pages.</p>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>Adds interaction to web pages.</p>
+        </div>
+
+        <div class="card">
+            <h2>Java</h2>
+            <p>Used for application and backend development.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
