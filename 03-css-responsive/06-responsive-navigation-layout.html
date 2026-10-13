@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 5%;
+            background: #0f172a;
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+        }
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 24px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .sidebar,
+        .content-panel {
+            padding: 24px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 16px;
+            font-size: 19px;
+        }
+
+        .sidebar ul {
+            padding-left: 20px;
+        }
+
+        .sidebar li {
+            margin-bottom: 12px;
+        }
+
+        .content-panel h1 {
+            margin-bottom: 8px;
+        }
+
+        .description {
+            margin-bottom: 24px;
+            color: #64748b;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            padding: 22px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 24px;
+            }
+
+            .sidebar li {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 550px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 10px 16px;
+            }
+
+            .page-layout {
+                width: 92%;
+                margin: 20px auto;
+                gap: 16px;
+            }
+
+            .sidebar,
+            .content-panel {
+                padding: 18px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-panel h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">DevSpace</div>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-layout">
+
+        <aside class="sidebar">
+            <h2>Quick Links</h2>
+
+            <ul>
+                <li><a href="#home">Dashboard</a></li>
+                <li><a href="#courses">My Courses</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-panel" id="home">
+            <h1>Responsive Dashboard</h1>
+
+            <p class="description">
+                A practical example of responsive navigation and page layout.
+            </p>
+
+            <section class="card-grid" id="courses">
+                <article class="card">
+                    <h3>HTML Fundamentals</h3>
+                    <p>Practice semantic HTML and page structure.</p>
+                </article>
+
+                <article class="card">
+                    <h3>CSS Layout</h3>
+                    <p>Learn Flexbox, Grid and positioning.</p>
+                </article>
+
+                <article class="card" id="projects">
+                    <h3>Responsive Design</h3>
+                    <p>Adapt interfaces to different screen sizes.</p>
+                </article>
+
+                <article class="card" id="contact">
+                    <h3>Web Projects</h3>
+                    <p>Apply concepts in practical exercises.</p>
+                </article>
+            </section>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>CSS Learning Lab | Responsive Layout Practice</p>
+    </footer>
+
+</body>
+</html>
