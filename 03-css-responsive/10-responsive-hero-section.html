@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Hero Section</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 6%;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #334155;
+            text-decoration: none;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center;
+            gap: 48px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(40px, 8vw, 100px) 0;
+        }
+
+        .hero-content .eyebrow {
+            margin-bottom: 16px;
+            color: #2563eb;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            font-size: clamp(34px, 5vw, 60px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-description {
+            max-width: 520px;
+            margin-bottom: 28px;
+            color: #475569;
+            font-size: clamp(16px, 2vw, 19px);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #2563eb;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+            color: white;
+        }
+
+        .hero-image {
+            width: 100%;
+            min-width: 0;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 20px;
+            background: #dbeafe;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .feature {
+            padding: 24px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .feature h2 {
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
+
+        .feature p {
+            color: #64748b;
+        }
+
+        footer {
+            padding: 24px;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-image {
+                max-height: 400px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 16px 5%;
+            }
+
+            .nav-links {
+                gap: 12px 18px;
+            }
+
+            .hero {
+                width: 90%;
+                padding: 40px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -0.5px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .features {
+                width: 90%;
+                margin-bottom: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">CodeCraft</div>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">Learn. Build. Grow.</p>
+
+                <h1>Build Your Future in Web Development</h1>
+
+                <p class="hero-description">
+                    Strengthen your skills through hands-on practice,
+                    practical projects and a consistent learning approach.
+                </p>
+
+                <div class="actions">
+                    <a class="button" href="#features">Explore Features</a>
+                    <a class="button secondary" href="#about">Learn More</a>
+                </div>
+            </div>
+
+            <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                alt="Laptop and workspace for web development"
+            >
+        </section>
+
+        <section class="features" id="features">
+            <article class="feature">
+                <h2>Learn by Doing</h2>
+                <p>Practice concepts through small, focused exercises.</p>
+            </article>
+
+            <article class="feature">
+                <h2>Build Projects</h2>
+                <p>Combine concepts into useful frontend interfaces.</p>
+            </article>
+
+            <article class="feature" id="about">
+                <h2>Keep Improving</h2>
+                <p>Review your work and improve one step at a time.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Learning Lab | Responsive Hero Section</p>
+    </footer>
+
+</body>
+</html>
