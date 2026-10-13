@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow Practice</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+        }
+
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            padding: 20px;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .box {
+            height: 120px;
+            padding: 12px;
+            border: 2px solid #2563eb;
+            background: #dbeafe;
+        }
+
+        .visible {
+            overflow: visible;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        .auto {
+            overflow: auto;
+        }
+
+        .wide-content {
+            width: 450px;
+            padding: 10px;
+            background: #bfdbfe;
+        }
+
+        .tall-content {
+            height: 220px;
+            padding: 10px;
+            background: #bfdbfe;
+        }
+
+        .note {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+
+            .examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Overflow</h1>
+
+    <p class="intro">
+        Learn how content behaves when it exceeds an element's dimensions.
+    </p>
+
+    <main class="examples">
+
+        <section class="card">
+            <h2>1. Overflow: Visible</h2>
+
+            <div class="box visible">
+                <div class="tall-content">
+                    This content is taller than its container.
+                    With visible overflow, extra content can appear outside
+                    the container.
+                </div>
+            </div>
+
+            <p class="note">Default behavior: overflowing content remains visible.</p>
+        </section>
+
+        <section class="card">
+            <h2>2. Overflow: Hidden</h2>
+
+            <div class="box hidden">
+                <div class="tall-content">
+                    This content exceeds the container height.
+                    The overflowing portion is clipped and cannot be
+                    accessed through scrolling.
+                </div>
+            </div>
+
+            <p class="note">Extra content is clipped.</p>
+        </section>
+
+        <section class="card">
+            <h2>3. Overflow: Scroll</h2>
+
+            <div class="box scroll">
+                <div class="tall-content">
+                    This content is intentionally longer than the box.
+                    Scroll inside this container to read the remaining text.
+                    Practice scrolling vertically and horizontally.
+                </div>
+            </div>
+
+            <p class="note">A scroll container is created even when scrolling isn't needed.</p>
+        </section>
+
+        <section class="card">
+            <h2>4. Overflow: Auto</h2>
+
+            <div class="box auto">
+                <div class="wide-content">
+                    This content is wider than the container.
+                    Scroll horizontally to see the complete content.
+                    Resize the browser to observe the behavior.
+                </div>
+            </div>
+
+            <p class="note">Scrollbars appear when the content requires them.</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
