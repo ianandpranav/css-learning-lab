@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Testimonials</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .hero {
+            padding: 45px 20px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgb(15 23 42 / 5%);
+        }
+
+        .stars {
+            margin-bottom: 12px;
+            color: #d97706;
+            letter-spacing: 3px;
+        }
+
+        .quote {
+            flex-grow: 1;
+            margin-bottom: 24px;
+            color: #475569;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .avatar {
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .person h2 {
+            font-size: 16px;
+        }
+
+        .person p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        @media (max-width: 850px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 580px) {
+            .container {
+                width: 92%;
+                margin: 25px auto;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .testimonial {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>What Learners Say</h1>
+        <p>Example testimonials for responsive layout practice</p>
+    </header>
+
+    <main class="container">
+        <section class="testimonial-grid" aria-label="Testimonials">
+
+            <article class="testimonial">
+                <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+
+                <p class="quote">
+                    "The structured lessons helped me understand HTML
+                    and CSS concepts through regular practice."
+                </p>
+
+                <div class="person">
+                    <div class="avatar" aria-hidden="true">AS</div>
+                    <div>
+                        <h2>Alex Smith</h2>
+                        <p>Frontend Learner</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial">
+                <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+
+                <p class="quote">
+                    "The responsive examples made it easier to understand
+                    how layouts adapt to mobile and desktop screens."
+                </p>
+
+                <div class="person">
+                    <div class="avatar" aria-hidden="true">JD</div>
+                    <div>
+                        <h2>Jamie Davis</h2>
+                        <p>Web Development Student</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial">
+                <p class="stars" aria-label="4 out of 5 stars">★★★★☆</p>
+
+                <p class="quote">
+                    "Practicing with small projects helped me connect
+                    CSS properties with real interface layouts."
+                </p>
+
+                <div class="person">
+                    <div class="avatar" aria-hidden="true">RK</div>
+                    <div>
+                        <h2>Riley Kumar</h2>
+                        <p>Beginner Developer</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Learning Lab | Responsive Testimonials</p>
+    </footer>
+
+</body>
+</html>
