@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Z-Index Practice</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+        }
+
+        .example {
+            margin-bottom: 40px;
+        }
+
+        .stage {
+            position: relative;
+            height: 260px;
+            max-width: 600px;
+            background: white;
+            border: 2px dashed #94a3b8;
+            border-radius: 10px;
+        }
+
+        .box {
+            position: absolute;
+            width: 180px;
+            height: 140px;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .red {
+            top: 25px;
+            left: 25px;
+            z-index: 1;
+            background: #dc2626;
+        }
+
+        .blue {
+            top: 65px;
+            left: 100px;
+            z-index: 2;
+            background: #2563eb;
+        }
+
+        .green {
+            top: 105px;
+            left: 175px;
+            z-index: 3;
+            background: #16a34a;
+        }
+
+        .negative-stage {
+            position: relative;
+            isolation: isolate;
+            height: 200px;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border: 2px dashed #94a3b8;
+            border-radius: 10px;
+        }
+
+        .negative-box {
+            position: absolute;
+            inset: 35px auto auto 35px;
+            width: 200px;
+            height: 100px;
+            z-index: -1;
+            background: #f59e0b;
+            border-radius: 8px;
+        }
+
+        .negative-text {
+            position: relative;
+            padding: 10px;
+        }
+
+        .note {
+            margin-top: 12px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 16px;
+            }
+
+            .stage {
+                height: 300px;
+            }
+
+            .box {
+                width: 145px;
+                height: 110px;
+            }
+
+            .blue {
+                left: 65px;
+            }
+
+            .green {
+                left: 105px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Z-Index</h1>
+
+    <p class="intro">
+        Learn how z-index controls the stacking order of overlapping elements.
+    </p>
+
+    <section class="example">
+        <h2>1. Different Z-Index Values</h2>
+
+        <div class="stage">
+            <div class="box red">Red — z-index: 1</div>
+            <div class="box blue">Blue — z-index: 2</div>
+            <div class="box green">Green — z-index: 3</div>
+        </div>
+
+        <p class="note">
+            The green box appears on top because it has the highest z-index
+            among these overlapping elements.
+        </p>
+    </section>
+
+    <section class="example">
+        <h2>2. Negative Z-Index</h2>
+
+        <div class="negative-stage">
+            <div class="negative-box"></div>
+
+            <div class="negative-text">
+                <h3>Content in front</h3>
+                <p>This text appears above the orange background box.</p>
+            </div>
+        </div>
+
+        <p class="note">
+            A negative z-index can place an element behind other content
+            within its stacking context.
+        </p>
+    </section>
+
+    <section class="example">
+        <h2>3. Try It Yourself</h2>
+
+        <ul>
+            <li>Change the red box to z-index: 5.</li>
+            <li>Change the blue box to z-index: 10.</li>
+            <li>Observe which box appears on top.</li>
+            <li>Remove position: absolute and see what changes.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
