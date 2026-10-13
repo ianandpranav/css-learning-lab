@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background: #0f172a;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+        }
+
+        /* Hide checkbox and hamburger on desktop */
+        .menu-toggle,
+        .menu-icon {
+            display: none;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 24px;
+            text-align: center;
+        }
+
+        main h1 {
+            margin-bottom: 12px;
+        }
+
+        /* Mobile navigation */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .menu-icon {
+                display: block;
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                padding-top: 15px;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 12px 0;
+            }
+
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+            }
+
+            .menu-toggle:focus-visible + .menu-icon {
+                outline: 2px solid white;
+                outline-offset: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">DevSpace</div>
+
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+        >
+
+        <label for="menu-toggle" class="menu-icon">
+            <span aria-hidden="true">☰</span>
+            <span class="sr-only">Toggle navigation</span>
+        </label>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <h1>Responsive Navigation</h1>
+        <p>Resize your browser to see the navigation adapt.</p>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>We are learning responsive web design.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <p>Explore our web development services.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with our team.</p>
+        </section>
+    </main>
+
+</body>
+</html>
