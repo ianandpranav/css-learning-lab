@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Registration Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .header {
+            padding: 30px 20px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        .header p {
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: min(90%, 700px);
+            margin: 35px auto;
+        }
+
+        .form-card {
+            padding: 30px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgb(15 23 42 / 6%);
+        }
+
+        .form-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .form-description {
+            margin-bottom: 24px;
+            color: #64748b;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font: inherit;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            background: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 1px;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 6px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                margin: 22px auto;
+            }
+
+            .form-card {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Join Our Learning Community</h1>
+        <p>Practice responsive forms using HTML and CSS</p>
+    </header>
+
+    <main class="container">
+        <section class="form-card">
+            <h2>Create Your Account</h2>
+
+            <p class="form-description">
+                Fill in the details below to get started.
+            </p>
+
+            <form action="#" method="get">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input
+                            type="text"
+                            id="first-name"
+                            name="firstName"
+                            placeholder="Enter first name"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input
+                            type="text"
+                            id="last-name"
+                            name="lastName"
+                            placeholder="Enter last name"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="course">Choose a Course</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="html-css">HTML & CSS</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="react">React</option>
+                            <option value="java">Java</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Learning Goals</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="What would you like to learn?"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <div class="checkbox-group">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                            >
+
+                            <label for="terms">
+                                I agree to the terms and conditions.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit">Create Account</button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Learning Lab | Responsive Form Practice</p>
+    </footer>
+
+</body>
+</html>
