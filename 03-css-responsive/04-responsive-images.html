@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            overflow: hidden;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #475569;
+        }
+
+        .contain-image {
+            object-fit: contain !important;
+            background: #e2e8f0;
+        }
+
+        .natural-image {
+            height: auto !important;
+            object-fit: initial !important;
+        }
+
+        footer {
+            padding: 24px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 92%;
+                margin: 24px auto;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Images</h1>
+        <p>Learn image sizing, cropping and fitting</p>
+    </header>
+
+    <main class="container">
+        <section class="image-grid">
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Mountain landscape"
+                >
+
+                <div class="card-content">
+                    <h2>1. Responsive Image</h2>
+                    <p>
+                        The image fills its container because width is
+                        set to 100% and height is controlled.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    class="contain-image"
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Mountain landscape fitted inside a container"
+                >
+
+                <div class="card-content">
+                    <h2>2. Object Fit: Contain</h2>
+                    <p>
+                        The complete image stays visible inside the box.
+                        Empty space may appear around it.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80"
+                    alt="Lake surrounded by mountains"
+                >
+
+                <div class="card-content">
+                    <h2>3. Object Fit: Cover</h2>
+                    <p>
+                        The image covers the entire area. Some edges
+                        may be cropped to preserve its proportions.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    class="natural-image"
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+                    alt="Sunlight passing through a forest"
+                    loading="lazy"
+                >
+
+                <div class="card-content">
+                    <h2>4. Natural Image Ratio</h2>
+                    <p>
+                        With automatic height, the image keeps its
+                        intrinsic aspect ratio instead of using a
+                        fixed-height crop.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Learning Lab | Responsive Images</p>
+    </footer>
+
+</body>
+</html>
