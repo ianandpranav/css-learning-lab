@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .layout {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header,
+        footer {
+            padding: 22px;
+            background: #1e293b;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 200px minmax(0, 1fr) 200px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        aside,
+        main {
+            padding: 24px;
+            border-radius: 8px;
+            background: white;
+        }
+
+        aside {
+            background: #dbeafe;
+        }
+
+        main h2 {
+            margin-bottom: 12px;
+        }
+
+        main p {
+            margin-bottom: 12px;
+        }
+
+        footer {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr 2fr;
+            }
+
+            .right-sidebar {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .right-sidebar {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+
+        <header>
+            <h1>Holy Grail Layout</h1>
+            <p>CSS Grid Layout Practice</p>
+        </header>
+
+        <div class="content">
+
+            <aside class="left-sidebar">
+                <h2>Navigation</h2>
+                <p>Dashboard</p>
+                <p>Projects</p>
+                <p>Settings</p>
+            </aside>
+
+            <main>
+                <h2>Main Content</h2>
+                <p>
+                    This section contains the primary content of the webpage.
+                    CSS Grid arranges the sidebar and content into columns.
+                </p>
+                <p>
+                    Resize the browser window to see how the layout adapts
+                    to tablet and mobile screen sizes.
+                </p>
+            </main>
+
+            <aside class="right-sidebar">
+                <h2>Updates</h2>
+                <p>Latest news</p>
+                <p>Recent activity</p>
+            </aside>
+
+        </div>
+
+        <footer>
+            <p>CSS Learning Lab | Holy Grail Layout</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
