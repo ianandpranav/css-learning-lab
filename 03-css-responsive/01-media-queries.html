@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background: #1e293b;
+            color: white;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .status {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #dcfce7;
+            border-radius: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .device-label::after {
+            content: "Desktop";
+            font-weight: bold;
+            color: #15803d;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .device-label::after {
+                content: "Tablet";
+                color: #b45309;
+            }
+
+            header {
+                padding: 28px 16px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 94%;
+                margin: 20px auto;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .device-label::after {
+                content: "Mobile";
+                color: #1d4ed8;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Web Design</h1>
+        <p>Understanding CSS Media Queries</p>
+    </header>
+
+    <main class="container">
+
+        <section class="status">
+            <p>Current screen category: <span class="device-label"></span></p>
+            <p>Resize your browser to see the layout change.</p>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <h2>HTML</h2>
+                <p>Creates the structure of a webpage.</p>
+            </article>
+
+            <article class="card">
+                <h2>CSS</h2>
+                <p>Controls styling, spacing and layout.</p>
+            </article>
+
+            <article class="card">
+                <h2>JavaScript</h2>
+                <p>Adds behaviour and interactivity.</p>
+            </article>
+        </section>
+
+    </main>
+
+</body>
+</html>
