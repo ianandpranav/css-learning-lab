@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs CSS Grid</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        h1, h2 {
+            margin-bottom: 16px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .item {
+            padding: 25px;
+            text-align: center;
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox vs CSS Grid</h1>
+
+    <section class="section">
+        <h2>Flexbox — One-Dimensional Layout</h2>
+
+        <div class="flex-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>CSS Grid — Two-Dimensional Layout</h2>
+
+        <div class="grid-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </section>
+
+</body>
+</html>
