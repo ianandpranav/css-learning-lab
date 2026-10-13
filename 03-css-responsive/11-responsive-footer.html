@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .content {
+            min-height: 65vh;
+            display: grid;
+            place-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h1 {
+            margin-bottom: 12px;
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .content p {
+            max-width: 550px;
+            color: #64748b;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, minmax(0, 1fr));
+            gap: 35px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 55px 0;
+        }
+
+        .footer-brand h2 {
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            color: #94a3b8;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 16px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px 5%;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .footer-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 35px 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 35px 0;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="content">
+        <div>
+            <h1>Welcome to CodeCraft</h1>
+            <p>
+                This sample page demonstrates a responsive footer
+                that adapts to different screen sizes.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <section class="footer-brand">
+                <h2>CodeCraft</h2>
+                <p>
+                    Learn web development through practice,
+                    creativity and hands-on projects.
+                </p>
+            </section>
+
+            <nav class="footer-column" aria-label="Quick links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-label="Resources">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#html">HTML Basics</a></li>
+                    <li><a href="#css">CSS Tutorials</a></li>
+                    <li><a href="#javascript">JavaScript</a></li>
+                </ul>
+            </nav>
+
+            <section class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@example.com">Email Us</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                </ul>
+            </section>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CodeCraft. Practice project.</p>
+            <p>Built while learning CSS responsive design.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
