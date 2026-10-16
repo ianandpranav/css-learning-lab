@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Contact Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-heading h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #64748b;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+        }
+
+        .info-item h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #64748b;
+            overflow-wrap: anywhere;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font: inherit;
+            background: #ffffff;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        @media (max-width: 750px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .page-heading h1 {
+                font-size: 30px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .page-heading h1 {
+                font-size: 26px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="page-heading">
+            <h1>Contact Us</h1>
+            <p>Have a question? We'd love to hear from you.</p>
+        </header>
+
+        <section class="contact-layout">
+
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+
+                <div class="info-item">
+                    <h3>Address</h3>
+                    <p>Jaipur, Rajasthan, India</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>hello@example.com</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <form class="contact-form" action="#" method="get">
+                <h2>Send a Message</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Choose a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
