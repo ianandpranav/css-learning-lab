@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive FAQ Section</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: min(850px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .faq-header h1 {
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .faq-header p {
+            color: #64748b;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            font-size: 24px;
+            color: #4f46e5;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item summary:hover {
+            background: #f8fafc;
+        }
+
+        .faq-item summary:focus-visible {
+            outline: 2px solid #4f46e5;
+            outline-offset: -3px;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #64748b;
+        }
+
+        .faq-footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .faq-footer a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .faq-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: calc(100% - 30px);
+                padding: 40px 0;
+            }
+
+            .faq-header {
+                margin-bottom: 25px;
+            }
+
+            .faq-item summary {
+                padding: 16px;
+                font-size: 15px;
+            }
+
+            .faq-answer {
+                padding: 0 16px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions below.</p>
+        </header>
+
+        <section class="faq-list" aria-label="Frequently asked questions">
+
+            <details class="faq-item">
+                <summary>What is responsive web design?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Responsive web design allows a website to adapt its
+                        layout and content to different screen sizes,
+                        including mobile phones, tablets, and desktops.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Why do we use CSS media queries?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Media queries apply CSS rules based on conditions
+                        such as viewport width. They help create layouts
+                        that work well across different devices.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What is the difference between Grid and Flexbox?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Flexbox is mainly designed for arranging items in
+                        one dimension, either a row or a column. CSS Grid
+                        is designed for two-dimensional row and column layouts.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do I need JavaScript for this FAQ section?</summary>
+                <div class="faq-answer">
+                    <p>
+                        No. HTML details and summary elements provide
+                        built-in expand-and-collapse functionality without
+                        requiring JavaScript.
+                    </p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How can I test a responsive website?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Resize your browser window or use the device toolbar
+                        in browser developer tools. Check for horizontal
+                        scrolling, clipped text, and poorly aligned elements.
+                    </p>
+                </div>
+            </details>
+
+        </section>
+
+        <footer class="faq-footer">
+            <p>
+                Still have questions?
+                <a href="15-responsive-contact-page.html">Contact us</a>
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
