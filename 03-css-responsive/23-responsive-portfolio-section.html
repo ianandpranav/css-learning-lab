@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Section</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-header h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .portfolio-header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.10);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            display: block;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content h2 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #eef2ff;
+            color: #4338ca;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .portfolio-footer p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 7px;
+            background: #4f46e5;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .contact-button:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 850px) {
+            .project-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                width: calc(100% - 30px);
+                padding: 40px 0;
+            }
+
+            .portfolio-header {
+                margin-bottom: 28px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .project-image {
+                height: 220px;
+            }
+
+            .project-content {
+                padding: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-card {
+                transition: none;
+            }
+
+            .project-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="portfolio-header">
+            <h1>My Projects</h1>
+            <p>
+                A selection of sample web projects demonstrating
+                responsive layouts and frontend development skills.
+            </p>
+        </header>
+
+        <section class="project-grid" aria-label="Portfolio projects">
+
+            <article class="project-card">
+                <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700"
+                    alt="Analytics dashboard displayed on a screen"
+                    loading="lazy"
+                >
+
+                <div class="project-content">
+                    <h2>Analytics Dashboard</h2>
+                    <p>
+                        A dashboard concept for presenting key metrics
+                        in a clean and readable interface.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Grid</span>
+                    </div>
+
+                    <a class="project-link" href="#contact">
+                        View Project →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700"
+                    alt="Laptop and workspace used for coding"
+                    loading="lazy"
+                >
+
+                <div class="project-content">
+                    <h2>Developer Workspace</h2>
+                    <p>
+                        A workspace concept with organized sections
+                        and responsive content cards.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Flexbox</span>
+                        <span class="tag">CSS</span>
+                    </div>
+
+                    <a class="project-link" href="#contact">
+                        View Project →
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=700"
+                    alt="Website interface design displayed on a screen"
+                    loading="lazy"
+                >
+
+                <div class="project-content">
+                    <h2>Business Website</h2>
+                    <p>
+                        A business website concept with clear sections,
+                        navigation, and responsive cards.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Responsive</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+
+                    <a class="project-link" href="#contact">
+                        View Project →
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+        <footer class="portfolio-footer" id="contact">
+            <p>Interested in working together?</p>
+            <a class="contact-button" href="15-responsive-contact-page.html">
+                Contact Me
+            </a>
+        </footer>
+
+    </main>
+
+</body>
+</html>
