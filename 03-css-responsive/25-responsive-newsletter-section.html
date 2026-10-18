@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Newsletter Section</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .newsletter {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.10);
+        }
+
+        .newsletter-content {
+            padding: 45px;
+            background: #312e81;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #c7d2fe;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-content h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .newsletter-content p {
+            color: #e0e7ff;
+        }
+
+        .newsletter-form {
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .newsletter-form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        input[type="email"]:focus {
+            outline: 2px solid #a5b4fc;
+            border-color: #4f46e5;
+        }
+
+        .subscribe-button {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px;
+            border: none;
+            border-radius: 7px;
+            background: #4f46e5;
+            color: #ffffff;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .subscribe-button:hover {
+            background: #3730a3;
+        }
+
+        .privacy-note {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .newsletter {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .newsletter-content {
+                padding: 30px;
+            }
+
+            .newsletter-form {
+                padding: 30px;
+            }
+
+            .newsletter-content h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 12px;
+            }
+
+            .newsletter-content,
+            .newsletter-form {
+                padding: 22px;
+            }
+
+            .newsletter-content h1 {
+                font-size: 26px;
+            }
+
+            .newsletter-form h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="newsletter">
+
+        <section class="newsletter-content">
+            <p class="eyebrow">Stay Updated</p>
+
+            <h1>Good Ideas, Delivered to Your Inbox.</h1>
+
+            <p>
+                Get useful web development tips, learning resources,
+                and project ideas delivered straight to your inbox.
+            </p>
+        </section>
+
+        <form class="newsletter-form" action="#" method="get">
+            <h2>Join Our Newsletter</h2>
+
+            <p class="description">
+                Subscribe to receive occasional updates.
+            </p>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <button class="subscribe-button" type="submit">
+                Subscribe Now
+            </button>
+
+            <p class="privacy-note">
+                Demo form for CSS practice. Your email is not stored
+                or subscribed to any mailing list.
+            </p>
+        </form>
+
+    </main>
+
+</body>
+</html>
